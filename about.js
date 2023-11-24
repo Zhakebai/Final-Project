@@ -1,7 +1,24 @@
+var sound1= new Audio();
+sound1.src = "click.wav";
+
+let btn = document.querySelector('.play-btn');
+let clip = document.querySelector('.clip');
+let close = document.querySelector('.close');
+let video = document.querySelector('video');
+btn.onclick = function(){
+  btn.classList.add('active');
+  clip.classList.add('active');
+  video.play();
+}
+close.onclick = function(){
+  btn.classList.remove('active');
+  clip.classList.remove('active');
+  video.pause();
+}
+
 function showNextContent(nextContainerId) {
-  // Hide the current active container
+  
   document.querySelector('.list_container.active').classList.remove('active');
 
-  // Show the next container
   document.getElementById(nextContainerId).classList.add('active');
 }
